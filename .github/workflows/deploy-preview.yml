@@ -30,6 +30,7 @@ jobs:
           cd packages
           git clone https://github.com/hydephp/hydefront.git
 
+      - uses: actions/setup-node@v3
       - name: Install Node dependencies
         run: npm ci
 
