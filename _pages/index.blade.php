@@ -36,6 +36,17 @@
                         Made with Tailwind, Laravel, and Coffee.
                     </p>
                 </section>
+                <section aria-label="About Hyde Canary">
+                    <p class="mt-4">
+                        <span class="font-bold">Hyde Canary</span> is a development environment for testing and developing HydePHP.
+                        Here you will find the latest features, bug fixes, and updates to HydePHP.
+                    </p>
+                    <p class="mt-4 mx-auto md:max-w-xl">
+                        <strong>Be aware!</strong>
+                        Keep on browsing and you <s>may</s>...<i>will</i> encounter bugs, placeholder content, and lots of other <span title="Including easter eggs!">issues-and/or-fun</span>.
+                    </p>
+                </section>
+                
             </div>
         </div>
         <!-- End Main Hero Content -->
