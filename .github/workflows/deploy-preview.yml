@@ -11,7 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
+      - name: Download latest Framework version
+        run: |
+          cd packages
+          git clone https://github.com/hydephp/framework.git
+
       - name: Install Composer dependencies
         run: composer install 
 
