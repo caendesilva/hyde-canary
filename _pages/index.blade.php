@@ -20,6 +20,10 @@
     }
 </style>
 @endpush
+<script>
+    // This page currently only supports dark mode, so make sure that the HTML element has the "dark" class.
+    document.documentElement.classList.add('dark');
+</script>
 <main class="my-auto px-6 pb-12 antialiased app-gradient-dark">
     <div class="mx-auto max-w-7xl">
         <!-- Main Hero Content -->
