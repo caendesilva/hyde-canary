@@ -1,10 +1,6 @@
 <footer aria-label="Page footer" class="flex py-4 px-6 w-full text-center mt-auto bg-slate-100 dark:bg-gray-800">
-	@php
-		$tag = (trim(shell_exec('git describe --tags --abbrev=0')));
-		empty($tag) ? $tag = 'dev-master' : $tag = $tag;
-	@endphp
 	<div class="text-center mx-auto">
-		<a href="https://github.com/caendesilva/hyde-canary" class="underline">Hyde Canary</a> {{ $tag }}-<a href="https://github.com/caendesilva/hyde-canary/commit/{{ shell_exec('git rev-parse HEAD') }}" class="underline">{{ shell_exec('git rev-parse --short HEAD') }}</a>
+		<a href="https://github.com/caendesilva/hyde-canary" class="underline">Hyde Canary</a> {{ (trim(shell_exec('git describe --tags --abbrev=0 || echo dev-master'))) }}-<a href="https://github.com/caendesilva/hyde-canary/commit/{{ shell_exec('git rev-parse HEAD') }}" class="underline">{{ shell_exec('git rev-parse --short HEAD') }}</a>
 	</div>
 	<a href="#app" aria-label="Go to top of page" class="float-right">
 		<button title="Scroll to top">
