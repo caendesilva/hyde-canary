@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'name' => env('SITE_NAME', 'HydePHP'),
+    'name' => env('SITE_NAME', 'HydePHP Canary'),
 
     /*
     |--------------------------------------------------------------------------
