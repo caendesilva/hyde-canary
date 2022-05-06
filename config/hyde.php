@@ -199,6 +199,8 @@ return [
     | By default, the sidebar title shown in the documentation page layouts uses
     | the app name suffixed with "docs". You can change it with this setting.
     |
+    | @todo #153 Fix bug where config option uses app name instead of Hyde name.
+    |
     */
 
     'docsSidebarHeaderTitle' => config('app.name').' Docs',
