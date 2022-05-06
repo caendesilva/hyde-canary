@@ -49,11 +49,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ref: 'site-preview'     
+        ref: "site-preview"     
+
     - name: Download _site artifact
       uses: actions/download-artifact@v3
       with:
         name: "_site"
         path: "."
+
     - name: Commit the changes
-      run: git push origin site-preview
+      uses: EndBug/add-and-commit@v9 
+      with:
+        add: "."
+        message: "Build & Deploy"
