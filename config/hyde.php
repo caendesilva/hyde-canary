@@ -172,10 +172,11 @@ return [
         //     'destination' => 'https://github.com/hydephp/hyde',
         //     'priority' => 1200,
         // ],
-        // [
-        //     'title' => 'Featured Blog Post',
-        //     'slug' => 'posts/hello-world',
-        // ]
+        [
+            'title' => 'Latest Posts',
+            'priority' => 200,
+            'slug' => 'posts',
+        ]
     ],
 
     /*
@@ -189,6 +190,8 @@ return [
 
     'navigationMenuBlacklist' => [
         '404',
+        'posts' // Remove default posts page and use override instead.
+                // Could be a bug, as I think that duplicates should be removed automatically.
     ],
 
     /*
