@@ -10,3 +10,10 @@ mix.js('resources/assets/app.js', 'app.js')
 	require('autoprefixer'),
 ]).setPublicPath('_media')
 	.copyDirectory('_media', '_site/media');
+
+
+// CANARY SPECIFIC FOR HYDEFRONT DEVELOPMENT
+mix.ts('packages/hydefront/hyde.ts', 'hyde.js')
+	.sass('packages/hydefront/hyde.scss', 'hyde.css')
+	.setPublicPath('_media')
+	.copyDirectory('_media', '_site/media');
