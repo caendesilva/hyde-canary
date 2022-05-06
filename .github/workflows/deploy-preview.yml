@@ -28,14 +28,14 @@ jobs:
           cd packages
           git clone https://github.com/hydephp/hydefront.git
 
-   #   - name: Install Node dependencies
-   #     run: npm ci
+      - name: Install Node dependencies
+        run: npm ci
 
       - name: Build the static site
         run: php hyde build
 
-   #   - name: Build the frontend assets
-   #     run: npm run prod
+      - name: Build the frontend assets
+        run: npm run prod
 
       - name: Upload _site artifact
         uses: actions/upload-artifact@v3
