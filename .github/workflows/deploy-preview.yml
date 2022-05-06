@@ -31,6 +31,9 @@ jobs:
           git clone https://github.com/hydephp/hydefront.git
 
       - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
       - name: Install Node dependencies
         run: npm ci
 
