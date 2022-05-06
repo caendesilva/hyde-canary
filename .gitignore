@@ -1,11 +1,13 @@
 /vendor
 /node_modules
-/builds
 /.idea
 /.vscode
-/.vagrant
 /.cache
 .phpunit.result.cache
-
 .env
-extensions/realtime-compiler/
+
+# Canary development files
+Hyde Canary.code-workspace
+/_site
+/_media
+!/_media/app.css
