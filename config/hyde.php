@@ -174,7 +174,7 @@ return [
         // ],
         [
             'title' => 'Latest Posts',
-            'priority' => 200,
+            'priority' => 600,
             'slug' => 'posts',
         ]
     ],
@@ -240,9 +240,12 @@ return [
     */
 
     'documentationPageOrder' => [
-        'readme',
-        'installation',
-        'getting-started',
+        'Headings',
+        'Page 1',
+        'Page 2',
+        'Page 3',
+        'Page 4',
+        'Page 5',
     ],
 
     /*
