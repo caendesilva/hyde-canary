@@ -47,7 +47,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: Live Preview
+      name: "Live Preview"
+      url: "https://caendesilva.github.io/hyde-canary/"
 
     steps:
     - uses: actions/checkout@v3
