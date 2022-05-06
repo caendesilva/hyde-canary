@@ -49,5 +49,9 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["hyde"]
+    "bin": ["hyde"],
+    "repositories": [{
+        "type": "path",
+        "url": "./packages/framework"
+    }]
 }
