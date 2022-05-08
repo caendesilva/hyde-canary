@@ -53,5 +53,8 @@
     "repositories": [{
         "type": "path",
         "url": "./packages/framework"
+    }, {
+        "type": "path",
+        "url": "./packages/realtime-compiler"
     }]
 }

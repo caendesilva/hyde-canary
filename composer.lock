@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e61d4a59c6c312f803bcd95074d192f2",
+    "content-hash": "b4d4c116b2b138c16f68fd806043d4a7",
     "packages": [
         {
             "name": "brick/math",
@@ -879,7 +879,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/framework",
-                "reference": "3db360f36206d9e8aab7c402777299b282a7bbe7"
+                "reference": "10a393b5a45444ee2ad79a2a3f8024b3d0cc3e0e"
             },
             "require": {
                 "illuminate/support": "^9.5",
@@ -6104,18 +6104,11 @@
         {
             "name": "hyde/realtime-compiler",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hydephp/realtime-compiler.git",
+            "dist": {
+                "type": "path",
+                "url": "./packages/realtime-compiler",
                 "reference": "3c49ba88ea9ae9937baf13ae96a6dfce2b73b285"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/3c49ba88ea9ae9937baf13ae96a6dfce2b73b285",
-                "reference": "3c49ba88ea9ae9937baf13ae96a6dfce2b73b285",
-                "shasum": ""
-            },
-            "default-branch": true,
             "bin": [
                 "server.php"
             ],
@@ -6125,7 +6118,6 @@
                     "Hyde\\RealtimeCompiler\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6135,11 +6127,9 @@
                     "email": "caen@desilva.se"
                 }
             ],
-            "support": {
-                "issues": "https://github.com/hydephp/realtime-compiler/issues",
-                "source": "https://github.com/hydephp/realtime-compiler/tree/master"
-            },
-            "time": "2022-04-16T20:37:33+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "mockery/mockery",
