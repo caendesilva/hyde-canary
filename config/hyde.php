@@ -83,7 +83,7 @@ return [
         // 'author' => 'Mr. Hyde',
         // 'description' => 'My Hyde Blog',
         // 'keywords' => 'Static Sites, Blogs, Documentation',
-        'generator' => 'HydePHP '.Hyde\Framework\Hyde::version(),
+        'generator' => 'HydePHP Canary',
     ],
 
     /*
