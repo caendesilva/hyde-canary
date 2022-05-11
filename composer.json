@@ -52,7 +52,7 @@
     "bin": ["hyde"],
     "repositories": [{
         "type": "path",
-        "url": "./packages/framework"
+        "url": "../Framework"
     }, {
         "type": "path",
         "url": "./packages/realtime-compiler"
