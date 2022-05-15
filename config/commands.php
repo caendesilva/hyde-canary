@@ -78,6 +78,7 @@ return [
         Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
         Illuminate\Console\Scheduling\ScheduleRunCommand::class,
         LaravelZero\Framework\Commands\StubPublishCommand::class,
+        LaravelZero\Framework\Commands\TestMakeCommand::class,
     ],
 
 ];
