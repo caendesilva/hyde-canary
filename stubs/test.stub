@@ -1,0 +1,18 @@
+<?php
+
+namespace {{ namespace }};
+
+use Tests\TestCase;
+
+/**
+ * Class {{ class }}.
+ *
+ * @covers \Hyde\Framework\
+ */
+class {{ class }} extends TestCase
+{
+    public function test_example()
+    {
+       //
+    }
+}
