@@ -17,7 +17,8 @@
 |
 */
 
-use Hyde\Framework\Features;
+use Hyde\Framework\Helpers\Features;
+use Hyde\Framework\Helpers\Meta;
 
 return [
 
@@ -29,26 +30,37 @@ return [
     | This value sets the name of your site and is, for example, used in
     | the compiled page titles and more. The default value is HydePHP.
     |
+    | The name is stored in the $siteName variable so it can be
+    | used again later on in this config.
+    |
     */
 
     'name' => $siteName = env('SITE_NAME', 'HydePHP Canary'),
 
     /*
     |--------------------------------------------------------------------------
-    | Site URL
+    | Site URL Configuration
     |--------------------------------------------------------------------------
     |
-    | If you want, you can set your site's URL here or in the .env file.
+    | Here are some configuration options for URL generation.
     |
-    | The URL will then be used in meta tags to create permalinks.
-    | If you are serving your site from a subdirectory, you will
-    | need to include that in the path without a trailing slash.
+    | A site_url is required to use sitemaps and RSS feeds.
     |
-    | Example: https://example.org/blog
+    | `site_url` is used to create canonical URLs and permalinks.
+    | `prettyUrls` will when enabled create links that do not end in .html.
+    | `generateSitemap` determines if a sitemap.xml file should be generated.
+    |
+    | To see the full documentation, please visit the (temporary link) below.
+    | https://github.com/hydephp/framework/wiki/Documentation-Page-Drafts
+    |
     |
     */
 
     'site_url' => env('SITE_URL', null),
+
+    'prettyUrls' => false,
+
+    'generateSitemap' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -67,15 +79,13 @@ return [
     | Global Site Meta Tags
     |--------------------------------------------------------------------------
     |
-    | While you can add any number of meta tags in the meta.blade.php component,
-    | this config setting allows you to easily customize some common metadata
-    | tags so increase your SEO score. You can keep them to their defaults
-    | or you can set a value to false or null to disable it completely.
+    | While you can add any number of meta tags in the meta.blade.php component
+    | using standard HTML, you can also use the Meta helper. To add a regular
+    | meta tag, use Meta::name() helper. To add an Open Graph property, use
+    | Meta::property() helper which also adds the `og:` prefix for you.
     |
-    | Note that some tags may be overwritten on certain pages, for instance post pages.
-    |
-    | Tip: See https://www.w3schools.com/tags/att_meta_name.asp
-    | for a list of tags and what they are for.
+    | Please note that some pages like blog posts contain dynamic meta tags
+    | which may override these globals when present in the front matter.
     |
     */
 
@@ -284,12 +294,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Hyde Config Version @HydeConfigVersion 1.0.0
+    | Warn about outdated config?
     |--------------------------------------------------------------------------
     |
-    | Hyde can use the value above to determine if this configuration file
-    | contains the latest config options. If your config needs updating,
-    | a message will be shown in the HydeCLI, unless disabled below.
+    | If your config needs updating, a message will be shown in the
+    | HydeCLI info screen, unless disabled below.
     |
     */
 
