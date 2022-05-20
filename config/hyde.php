@@ -56,7 +56,8 @@ return [
     |
     */
 
-    'site_url' => env('SITE_URL', null),
+    // 'site_url' => env('SITE_URL', null),
+    'site_url' => 'https://example.com',
 
     'prettyUrls' => false,
 
@@ -90,10 +91,10 @@ return [
     */
 
     'meta' => [
-        // 'author' => 'Mr. Hyde',
-        // 'description' => 'My Hyde Blog',
-        // 'keywords' => 'Static Sites, Blogs, Documentation',
-        'generator' => 'HydePHP Canary',
+        Meta::name('author', 'Mr. Hyde'),
+        Meta::name('description', 'My Hyde Blog'),
+        Meta::name('keywords', 'Static Sites, Blogs, Documentation'),
+        Meta::name('generator', 'HydePHP Canary'),
     ],
 
     /*
@@ -250,7 +251,7 @@ return [
     |
     */
 
-    'siteOutputPath' => 'C:\xampp\htdocs',
+    // 'siteOutputPath' => 'C:\xampp\htdocs',
 
     /*
     |--------------------------------------------------------------------------
