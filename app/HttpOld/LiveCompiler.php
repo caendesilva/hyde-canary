@@ -66,7 +66,7 @@ class LiveCompiler extends StaticPageBuilder
 
     private function getPath()
     {
-        $path =Hyde::path($this->getType().'/'.basename($this->uri, '.html'));
+        $path = Hyde::path($this->getType().'/'.basename($this->uri, '.html'));
 
         return  $path;
     }
