@@ -112,8 +112,8 @@ class Router
     protected function handlePageRequest(): Response
     {
         $requestPath = $this->normalizePath($this->request->path);
-		$sourceFileModel = $this->decodeSourceFileModel($requestPath);
-		$sourceFilePath = $this->decodeSourceFilePath($sourceFileModel, $requestPath);
+		$sourceFilePath = $this->decodeSourceFilePath($requestPath);
+		$sourceFileModel = $this->decodeSourceFileModel($sourceFilePath);
 
 		$html = $this->getHtml($sourceFileModel, $sourceFilePath);
 
@@ -137,31 +137,35 @@ class Router
         return $path;
     }
 
-	protected function decodeSourceFileModel(string $path): string
+	protected function decodeSourceFilePath(string $path): string
 	{
+        // Todo get paths from model class instead of hardcoded
 		if (str_starts_with($path, '/posts/')) {
-           	return MarkdownPost::class;
+            return '_posts/'. basename($path);
         }
 
-		if (str_starts_with($path, '/docs/')) {
-			return DocumentationPage::class;
-		}
+        if (str_starts_with($path, '/docs/')) {
+            return '_docs/'. basename($path);
+        }
 
-		// todo support markdown
-		return BladePage::class;
+        return '_pages/'. basename($path);
 	}
 
-	protected function decodeSourceFilePath(string $model, string $path): string
+	protected function decodeSourceFileModel(string $path): string
 	{
-		if ($model == MarkdownPost::class) {
-			return Hyde::path(). '/_posts/'. $path;
-		}
+        if (str_starts_with($path, '_posts/')) {
+            return MarkdownPost::class;
+        }
 
-		if ($model == DocumentationPage::class) {
-			return Hyde::path(). '/_docs/'. $path;
-		}
+        if (str_starts_with($path, '_docs/')) {
+            return DocumentationPage::class;
+        }
 
-		return Hyde::path(). '/_pages/'. $path;
+        if (file_exists(Hyde::path($path . '.md'))) {
+            return MarkdownPage::class;
+        }
+
+        return BladePage::class;
 	}
 
 	protected function getHtml(string $model, string $path): string
