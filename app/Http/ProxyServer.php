@@ -23,7 +23,7 @@ class Main extends App
         header('Content-Type: ' . $file->getMimeType());
         header('Content-Length: ' . $file->getContentLength());
 
-        return new Response(200, 'Hello World!', [
+        return new Response(200, 'OK', [
             'body' => $file->getStream(),
         ]);
     }
