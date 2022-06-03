@@ -50,4 +50,5 @@ return [
         //
     ],
 
+    'enable_blade' => true,
 ];
