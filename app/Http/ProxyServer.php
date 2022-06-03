@@ -42,6 +42,18 @@ class Main extends App
             return new FileObject($path) ;
         }
 
+        $path = BASE_PATH.'/'. basename($this->request->path);
+
+        if (file_exists($path)) {
+            return new FileObject($path) ;
+        }
+
+        $path = BASE_PATH. '/_media/'. basename($this->request->path);
+
+        if (file_exists($path)) {
+            return new FileObject($path) ;
+        }
+
         throw new \Exception('File not found', 404);
     }
 }
