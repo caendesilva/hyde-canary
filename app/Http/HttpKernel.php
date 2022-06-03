@@ -12,4 +12,19 @@ class HttpKernel implements HttpKernelInterface
     {
         return (new Router($request))->handle();
     }
+
+    public static function handleException(\Throwable $exception)
+    {
+        $whoops = new \Whoops\Run;
+        $whoops->allowQuit(false);
+        $whoops->writeToOutput(false);
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+        $html = $whoops->handleException($exception);
+
+        return Response::make(500, 'Internal Server Error', [
+            'Content-Type' => 'text/html',
+            'Content-Length' => strlen($html),
+            'body' => $html,
+        ]);
+    }
 }

@@ -40,6 +40,11 @@ $laravel = require_once 'bootstrap/app.php';
 //$httpKernel = new \App\Http\HttpKernel($app, $uri);
 //$httpKernel->handle();
 
-$app = \Desilva\Microserve\Microserve::boot(\App\Http\HttpKernel::class);
+try {
+    $app = \Desilva\Microserve\Microserve::boot(\App\Http\HttpKernel::class);
 
-exit($app->handle());
+    exit($app->handle());
+} catch (Throwable $exception) {
+    \App\Http\HttpKernel::handleException($exception);
+    exit($exception->getCode());
+}
