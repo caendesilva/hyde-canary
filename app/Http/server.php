@@ -42,6 +42,4 @@ $app = require_once 'bootstrap/app.php';
 
 $app = \Desilva\Microserve\Microserve::boot(\App\Http\HttpKernel::class);
 
-$app->handle();
-
-exit($app->getStatusCode());
+exit($app->handle());
