@@ -882,7 +882,6 @@
                 "reference": "f122b331bd7d78a6ac4f49e58bb1d61363b07973"
             },
             "require": {
-                "ext-simplexml": "*",
                 "illuminate/support": "^9.5",
                 "laravel-zero/framework": "^9.1",
                 "league/commonmark": "^2.2",
@@ -892,9 +891,11 @@
                 "torchlight/torchlight-commonmark": "^0.5.5"
             },
             "require-dev": {
+                "hyde/realtime-compiler": "^2.0",
                 "phpunit/phpunit": "^7.5.15 || ^8.5 || ^9.0"
             },
             "suggest": {
+                "ext-simplexml": "Required to generate sitemaps and RSS feeds.",
                 "hyde/hyde": "The Framework package contains the Hyde Core. To create your site you should use the Hyde/Hyde project."
             },
             "type": "library",
